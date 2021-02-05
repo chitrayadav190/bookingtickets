@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ticketings</h1>
+
+<table class= "table table-striped table-bordered">
+  <thead class="table-dark">
+    <tr>
+      <th>System</th>
+      <th>Trains</th>
+      <th>From</th>
+      <th>To</th>
+      <th>Date</th>
+      <th>Price</th>
+      <th>Class</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ticketings.each do |ticketing| %>
+      <tr>
+        <td><%= ticketing.system %></td>
+        <td><%= ticketing.Trains %></td>
+        <td><%= ticketing.from %></td>
+        <td><%= ticketing.To %></td>
+        <td><%= ticketing.Date %></td>
+        <td><%= ticketing.Price %></td>
+        <td><%= ticketing.Class %></td>
+        <td><%= link_to 'Show', ticketing %></td>
+        <td><%= link_to 'Edit', edit_ticketing_path(ticketing) %></td>
+        <!--  <td><%= link_to 'Payment', payment_path(ticketing) %></td>-->
+        <td><%= link_to 'cancel', ticketing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ticketing', new_ticketing_path, class:"btn btn-secondary" %>
+

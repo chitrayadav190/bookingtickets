@@ -1,0 +1,73 @@
+<%= form_with(model: ticketing) do |form| %>
+  <% if ticketing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ticketing.errors.count, "error") %> prohibited this ticketing from being saved:</h2>
+
+      <ul>
+        <% ticketing.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :system %>
+    <%= form.text_field :system %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Trains %>
+    <%= form.text_field :Trains %>
+  </div>
+
+  <div class="field">
+    <%= form.label :from %>
+    <%= form.text_field :from %>
+  </div>
+
+  <div class="field">
+    <%= form.label :To %>
+    <%= form.text_field :To %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Date %>
+    <%= form.text_field :Date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Price %>
+    <%= form.text_field :Price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Class %>
+    <%= form.text_field :Class %>
+  </div>
+
+  <div class="field">
+    <%= lable_tag : card_number, 'Credit Card Number'  %>
+    <%= text_field_tag : card_number, nil, name: nil %>
+  </div>
+
+  <div class="field">
+    <%= lable_tag : card_code, 'security code on card(cvv)'  %>
+    <%= text_field_tag : card_code, nil, name: nil %>
+  </div>
+
+  <div class="field">
+    <%= lable_tag : card_month, 'card expiration'  %>
+    <%= select_month nil, {add_month_numbers: true}, {name: nil, id: 'card_month'}%>
+    <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+}, {name: nil, id: 'card year'} %>
+  
+  </div>
+
+
+
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>System:</strong>
+  <%= @ticketing.system %>
+</p>
+
+<p>
+  <strong>Trains:</strong>
+  <%= @ticketing.Trains %>
+</p>
+
+<p>
+  <strong>From:</strong>
+  <%= @ticketing.from %>
+</p>
+
+<p>
+  <strong>To:</strong>
+  <%= @ticketing.To %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @ticketing.Date %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @ticketing.Price %>
+</p>
+
+<p>
+  <strong>Class:</strong>
+  <%= @ticketing.Class %>
+</p>
+
+<%= link_to 'Edit', edit_ticketing_path(@ticketing) %> |
+<%= link_to 'Back', ticketings_path %>

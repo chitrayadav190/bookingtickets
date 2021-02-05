@@ -1,0 +1,37 @@
+<%= form_with(model: bookingticket) do |form| %>
+  <% if bookingticket.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bookingticket.errors.count, "error") %> prohibited this bookingticket from being saved:</h2>
+
+      <ul>
+        <% bookingticket.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+   
+    <%= form.text_field :event_name, class: "form-control", placeholder: "event name" %>
+  </div>
+
+  <div class="field form-group">
+    
+    <%= form.text_field :location, class: "form-control",placeholder: "location"%>
+  </div>
+
+  <div class="field form-group">
+    
+    <%= form.text_field :Date, class: "form-control",placeholder: "date" %>
+  </div>
+
+  <div class="field form-group">
+    
+    <%= form.text_field :Price, class: "form-control",placeholder: "Price" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class:'btn btn-secondary' %>
+  </div>
+<% end %>

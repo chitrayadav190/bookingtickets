@@ -1,0 +1,2 @@
+class Bookingticket < ApplicationRecord
+end
